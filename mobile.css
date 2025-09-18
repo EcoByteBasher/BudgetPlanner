@@ -1,7 +1,5 @@
 /* mobile.css */
 
-/* Only apply the following styles for screens <= 768px */
-
 /* Compact banner (title and tabs) */
 @media (max-width: 768px) {
   header {
@@ -70,13 +68,14 @@
     font-size: 0.7rem;
   }
 
-  /* Results: scrolls up, no stickiness */
+  /* Results: scrolls up with the form */
   .results {
     background: #fff;
     border-top: 2px solid #ccc;
     padding: 0.3rem 0.5rem;
     font-size: 0.75rem;
     line-height: 1.2;
+    margin-top: 1rem;
   }
 
   .result-row {
@@ -98,9 +97,13 @@
     font-weight: 600;
     text-align: right;
   }
+
+  .calculator-panel {
+    position: static;  /* Allow it to scroll with the page */
+  }
 }
 
-/* Restore default desktop styles for screens larger than 768px */
+/* Default desktop styles */
 @media (min-width: 768px) {
   .banner h1 {
     font-size: 2rem;
