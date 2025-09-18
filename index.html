@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Budget Planner (SPA)</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="header">
+      <h1>Budget Planner</h1>
+      <!-- App version -->
+      <div id="app-version" class="app-version"></div>
+
+      <nav class="tabs">
+        <a href="#income" class="tab">Income</a>
+        <a href="#housing" class="tab">Housing</a>
+        <a href="#utilities" class="tab">Utilities</a>
+        <a href="#transport" class="tab">Transport</a>
+        <a href="#finance" class="tab">Finance</a>
+        <a href="#domestic" class="tab">Domestic</a>
+        <a href="#pets" class="tab">Pets</a>
+        <a href="#social" class="tab">Social</a>
+      </nav>
+    </header>
+
+    <main id="app" class="form-panel"></main>
+
+    <section class="calculator-panel">
+      <div class="actions">
+        <div class="left-buttons">
+          <button id="calculateBtn" class="calculate">Calculate</button>
+          <button id="exportBtn" class="calculate">Export CSV</button>
+          <label class="calculate import-label">
+            Import CSV
+            <input id="importFile" type="file" accept=".csv" style="display:none">
+          </label>
+        </div>
+        <div class="right-buttons">
+          <button id="resetBtn" class="reset">Reset</button>
+        </div>
+      </div>
+      <div class="results">
+        <div class="result-row">
+          <span class="label">Annual income:</span>
+          <span class="value" id="annualIncome">£xxxx</span>
+          <span class="subvalue" id="monthlyIncome">(£xx / month)</span>
+        </div>
+        <div class="result-row">
+          <span class="label">Annual expenditure:</span>
+          <span class="value" id="annualExp">£yyyy</span>
+          <span class="subvalue" id="monthlyExp">(£yy / month)</span>
+        </div>
+        <div class="result-row net" id="netRow">
+          <span class="label">Annual <span id="surplusLabel">surplus</span>:</span>
+          <span class="value" id="annualNet">£zzzz</span>
+          <span class="subvalue" id="monthlyNet">(£zz / month)</span>
+        </div>
+      </div>
+      <div id="importMsg" class="save-msg">✅ Budget imported successfully</div>
+    </section>
+
+    <footer class="footer">&copy; Budget Planner</footer>
+  </div>
+  <script type="module" src="app.js"></script>
+  <script>
+    let appVersion = 'unknown';
+
+    // Load version from manifest
+    fetch('manifest.json')
+      .then(res => res.json())
+      .then(manifest => {
+        appVersion = manifest.version || 'unknown';
+        document.getElementById('app-version').textContent = `v${appVersion}`;
+      })
+      .catch(() => {
+        document.getElementById('app-version').textContent = `(${appVersion})`;
+      });
+  </script>
+</body>
+</html>
+
