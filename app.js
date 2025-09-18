@@ -126,7 +126,7 @@ document.getElementById('importFile').addEventListener('change', e => {
     } catch (err) {
       console.error('Import failed:', err);
       window.__suspendAutoSave = false;
-      alert('Import failed — check console for details.');
+      alert('Import failed — possibly wrong file format');
     } finally {
       // clear the file input so the same file can be re-chosen if needed
       e.target.value = '';
