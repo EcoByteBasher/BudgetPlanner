@@ -35,7 +35,7 @@
 
 /* Buttons row */
 .actions {
-  position: sticky;
+  position: static;
   bottom: 3rem; /* just above results */
   display: flex;
   justify-content: space-between;
@@ -60,7 +60,7 @@ button, .btn {
 
 /* Results panel */
 .results {
-  position: sticky;
+  position: static;
   bottom: 0;
   background: #fff;
   border-top: 2px solid #ccc;
