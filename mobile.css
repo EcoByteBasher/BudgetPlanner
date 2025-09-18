@@ -44,16 +44,28 @@
     flex: 1;
   }
 
+  /* Override sticky positioning on small screens */
+  .calculator-panel {
+    position: static;  /* Allow it to scroll with the page */
+  }
+
   /* Separate Reset button */
   #resetBtn {
     flex-basis: 100%;  /* make Reset take full width */
   }
 
-  /* Inputs: make them smaller and tighter */
+  /* Inputs: make them smaller and tighter, fit on one row */
   .field-row {
     display: flex;
-    flex-direction: column;
+    align-items: center; /* label, input and radio on one line */
+    gap: 0.5rem;
     margin: 0.3rem 0;
+  }
+
+  .field-label {
+    font-size: 0.75rem;
+    flex: 1; /* allows label to occupy just enough space */
+    margin-right: 0.5rem;
   }
 
   .field-input input[type="number"] {
@@ -68,7 +80,7 @@
     font-size: 0.7rem;
   }
 
-  /* Results: scrolls up with the form */
+  /* Results: scrolls up with the form, compact alignment */
   .results {
     background: #fff;
     border-top: 2px solid #ccc;
@@ -98,12 +110,24 @@
     text-align: right;
   }
 
-  .calculator-panel {
-    position: static;  /* Allow it to scroll with the page */
+  /* Adjust font-size of results text */
+  .result-row .value {
+    font-size: 0.9rem;
+  }
+
+  /* Make form fields and results fit into available space */
+  .results, .actions {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust margin and padding where needed */
+  .actions, .results {
+    padding: 0.25rem;
   }
 }
 
-/* Default desktop styles */
+/* Desktop restores */
 @media (min-width: 768px) {
   .banner h1 {
     font-size: 2rem;
