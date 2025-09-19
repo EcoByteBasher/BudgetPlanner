@@ -33,11 +33,9 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
 .tab:hover {
   background: #dbeafe;
 }
-
 .tab.active {
   background: #0f62fe;
   color: #fff;
@@ -63,7 +61,6 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-/* Stack rows vertically */
 .form-section {
   display: flex;
   flex-direction: column;
@@ -71,26 +68,21 @@ h1 {
   margin-bottom: 1rem;
 }
 
-/* Each field row: label | input | radios */
-
-/* Labels fixed width, right-aligned */
+/* Field rows: desktop = inline, mobile overrides later */
 .field-row {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  gap: 1rem;
 }
 
 .field-label {
-  width: 180px;
-  flex-shrink: 0;
+  flex: 0 0 180px;   /* fixed width only on desktop */
   text-align: right;
-  margin-right: 1rem;
 }
 
 .field-input {
-  width: 120px;
-  flex-shrink: 0;
-  margin-right: 1rem;
+  flex: 0 0 120px;
 }
 
 .field-input input[type="number"] {
@@ -102,39 +94,36 @@ h1 {
 }
 
 .field-freq {
-  width: 220px;  /* fixed width for all rows */
+  flex: 0 0 220px;
   display: flex;
   gap: 0.5rem;
   font-size: 0.85rem;
-  margin-left: 0.5rem;   /* space after input */
 }
 
 /* Alternate shading */
 .field-row:nth-child(even) {
   background: #f9fafb;
   border-radius: 5px;
-  padding: 0.2rem 0;  /* only vertical padding */
+  padding: 0.2rem 0;
 }
 
-/* Actions (save button & message) */
+/* Actions (buttons & message) */
 .actions {
   display: flex;
-  justify-content: space-between; /* space between left and right groups */
+  justify-content: space-between;
   align-items: center;
   margin-top: 0.5rem;
 }
-
 .left-buttons {
   display: flex;
   gap: 0.5rem;
 }
-
 .right-buttons {
   margin-left: auto;
 }
 
 .reset {
-  background: #e63946;   /* solid red */
+  background: #e63946;
   color: #fff;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -143,19 +132,14 @@ h1 {
   font-size: 1rem;
   min-width: 100px;
   text-align: center;
-  font-weight: 700;       /* bolder text */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* subtle shadow */
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-
 .reset:hover {
   background: #b91c1c;
 }
 
-.reset:hover {
-  background: #b91c1c;
-}
-
-/* Inline "✓ Saved" message */
+/* Inline save msg */
 .save-msg {
   color: green;
   font-weight: bold;
@@ -163,7 +147,6 @@ h1 {
   transform: translateY(-5px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .save-msg.show {
   opacity: 1;
   transform: translateY(0);
@@ -183,7 +166,6 @@ h1 {
   gap: 1rem;
 }
 
-/* Buttons */
 .calculate {
   background: #0f62fe;
   color: #fff;
@@ -193,16 +175,11 @@ h1 {
   cursor: pointer;
   font-size: 1rem;
 }
-
 .calculate:hover {
   background: #0048c9;
 }
 
-.reset:hover {
-  background: #b91c1c;   /* darker red */
-}
-
-/* Results display */
+/* Results */
 .results {
   display: flex;
   flex-direction: column;
@@ -212,49 +189,39 @@ h1 {
 .result-row {
   display: flex;
   align-items: baseline;
-  gap: 1.5rem;   /* space between label and numbers */
+  gap: 1.5rem;
   margin: 0.4rem 0;
 }
-
 .result-row .label {
-  min-width: 200px; /* keeps labels aligned */
+  min-width: 200px;
   font-weight: 500;
   text-align: left;
 }
-
 .result-row .value,
 .result-row .subvalue {
   font-weight: bold;
   text-align: left;
 }
-
 .result-row .subvalue {
   color: #555;
   margin-left: 0.5rem;
   font-weight: normal;
 }
-
-/* Highlight the net result row */
 .result-row.net .label {
   font-weight: 600;
   color: #222;
 }
-
 .result-row.net .value {
   font-size: 1.25rem;
   font-weight: 700;
 }
-
 .result-row.net .subvalue {
   font-size: 1.1rem;
 }
-
-/* Optional: green for surplus, red for deficit */
 .result-row.net.surplus .value,
 .result-row.net.surplus .subvalue {
   color: green;
 }
-
 .result-row.net.deficit .value,
 .result-row.net.deficit .subvalue {
   color: red;
@@ -267,27 +234,9 @@ h1 {
   font-size: 0.9rem;
   color: #555;
 }
-
 .note.small {
   font-size: 0.85rem;
   color: #666;
   margin-top: 0.5rem;
-}
-
-/* ------------------ Mobile Responsiveness ------------------ */
-@media (max-width: 768px) {
-  .field-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .result-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .result-row .value,
-  .result-row .subvalue {
-    width: auto;
-    text-align: left;
-  }
 }
 
