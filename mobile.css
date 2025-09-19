@@ -34,7 +34,6 @@
     gap: 0.25rem;
     margin: 0.3rem 0;
   }
-  .field-label,
   .field-input,
   .field-freq {
     width: auto !important;     /* reset fixed desktop widths */

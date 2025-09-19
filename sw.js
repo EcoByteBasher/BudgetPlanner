@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bp-spa-v10';  // bump on every release
+const CACHE_NAME = 'bp-spa-v11';  // bump on every release
 const FILES = [
   '/index.html',
   '/app.js',
