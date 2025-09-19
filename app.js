@@ -50,18 +50,24 @@ function runCalc() {
   const monthlyExpense = Math.round(annualExpense / 12);
   const annualNet = annualIncome - annualExpense;
   const monthlyNet = Math.round(annualNet / 12);
+
   const netRow = document.querySelector('.result-row.net');
+  const surplusLabel = document.getElementById('surplusLabel');
 
   document.getElementById('annualIncome').textContent = formatGBP(annualIncome);
   document.getElementById('monthlyIncome').textContent = `(${formatGBP(monthlyIncome)} / month)`;
   document.getElementById('annualExp').textContent = formatGBP(annualExpense);
   document.getElementById('monthlyExp').textContent = `(${formatGBP(monthlyExpense)} / month)`;
-  document.getElementById('annualNet').textContent = formatGBP(Math.abs(annualNet));
-  document.getElementById('monthlyNet').textContent = `(${formatGBP(Math.abs(monthlyNet))} / month)`;
+  document.getElementById('annualNet').textContent = formatGBP(annualNet);
+  document.getElementById('monthlyNet').textContent = `(${formatGBP(monthlyNet)} / month)`;
 
   if (netRow) {
     netRow.classList.toggle('surplus', annualNet >= 0);
     netRow.classList.toggle('deficit', annualNet < 0);
+
+    if (surplusLabel) {
+      surplusLabel.textContent = annualNet >= 0 ? 'surplus' : 'deficit';
+    }
   }
 }
 
