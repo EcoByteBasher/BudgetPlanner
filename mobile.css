@@ -42,8 +42,11 @@
     margin: 0 !important;
   }
   .field-label {
+    width: 120px;        /* consistent width, slightly narrower than desktop */
+    flex-shrink: 0;      /* don’t let it collapse */
+    text-align: right;   /* right-align like desktop */
+    margin-right: 0.5rem;
     font-size: 0.75rem;
-    flex: 1;  /* allow labels to shrink/grow */
   }
   .field-input input[type="number"] {
     width: 6ch;                 /* ~6 digits */
