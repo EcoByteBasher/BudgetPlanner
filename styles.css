@@ -212,11 +212,12 @@ h1 {
   color: #222;
 }
 .result-row.net .value {
-  font-size: 1.25rem;
-  font-weight: 700;
+  /*font-size: 1.25rem;*/
+  font-weight: 800;
 }
 .result-row.net .subvalue {
-  font-size: 1.1rem;
+  /*font-size: 1.1rem;*/
+  font-weight: 800;
 }
 .result-row.net.surplus .value,
 .result-row.net.surplus .subvalue {

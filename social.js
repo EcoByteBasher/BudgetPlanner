@@ -5,8 +5,10 @@ export function renderSocial(container) {
   container.innerHTML = `
     <form id="socialForm" class="form-section">
       ${field('Holidays', 'holidays', key)}
-      ${field('Eating out/takeaways', 'eating_out', key)}
+      ${field('Eating out/Takeaways', 'eating_out', key)}
       ${field('Leisure/Entertainment', 'leisure', key)}
+      ${field('Clubs/Societies', 'clubs', key)}
+      ${field('Voluntary work', 'volunteering', key)}
       ${field('Entertaining', 'entertaining', key)}
       ${field('Other', 'other', key)}
       <p class="note small">Please enter whole pounds only.</p>

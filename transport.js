@@ -8,13 +8,13 @@ export function renderTransport(container) {
       ${field('Car tax', 'car_tax', key)}
       ${field('Car insurance', 'car_insurance', key)}
       ${field('Car MoT', 'car_mot', key)}
-      ${field('Breakdown insurance', 'breakdown', key)}
+      ${field('Breakdown cover', 'breakdown', key)}
       ${field('Fuel', 'fuel', key)}
-      ${field('Servicing & maintenance', 'servicing', key)}
+      ${field('Servicing', 'servicing', key)}
       ${field('Parking', 'parking', key)}
       ${field('Rail fares', 'rail', key)}
       ${field('Taxis', 'taxis', key)}
-      ${field('Bus/tram/ferry', 'bus', key)}
+      ${field('Bus/Tram/Ferry', 'bus', key)}
       ${field('Cycle maintenance', 'cycle', key)}
       ${field('Other', 'other', key)}
       <p class="note small">Please enter whole pounds only.</p>

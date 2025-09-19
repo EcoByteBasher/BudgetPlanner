@@ -8,7 +8,7 @@ export function renderFinance(container) {
       ${field('Loan repayments', 'loan_repayments', key)}
       ${field('Credit card charges', 'credit_card', key)}
       ${field('Taxes (non-PAYE)', 'taxes', key)}
-      ${field('Savings/Investment deposits', 'savings', key)}
+      ${field('Savings deposits', 'savings', key)}
       ${field('Other', 'other', key)}
       <p class="note small">Please enter whole pounds only.</p>
     </form>

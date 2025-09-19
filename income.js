@@ -4,10 +4,10 @@ export function renderIncome(container) {
   const key = 'income';  // short name only
   container.innerHTML = `
     <form id="incomeForm" class="form-section" key="${key}">
-      ${field('Primary employment 1', 'primary1', key)}
-      ${field('Primary employment 2', 'primary2', key)}
-      ${field('Casual employment 1', 'secondary1', key)}
-      ${field('Casual employment 2', 'secondary2', key)}
+      ${field('Salary 1', 'primary1', key)}
+      ${field('Salary 2', 'primary2', key)}
+      ${field('Casual 1', 'secondary1', key)}
+      ${field('Casual 2', 'secondary2', key)}
       ${field('Savings', 'savings', key)}
       ${field('Investments', 'investments', key)}
       ${field('Gifts', 'gifts', key)}
