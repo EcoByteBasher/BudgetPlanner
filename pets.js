@@ -8,6 +8,7 @@ export function renderPets(container) {
       ${field('Equipment', 'equipment', key)}
       ${field("Vet's bills", 'vet', key)}
       ${field('Insurance', 'insurance', key)}
+      ${field('Classes', 'classes', key)}
       ${field('Other', 'other', key)}
       <p class="note small">Please enter whole pounds only.</p>
     </form>

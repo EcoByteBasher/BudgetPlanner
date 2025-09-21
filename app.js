@@ -7,6 +7,7 @@ import { renderFinance } from './finance.js';
 import { renderDomestic } from './domestic.js';
 import { renderPets } from './pets.js';
 import { renderSocial } from './social.js';
+import { renderPersonal } from './personal.js';
 import {
   loadAllPages,
   calculateTotals,
@@ -34,6 +35,7 @@ function router() {
   else if (hash === 'domestic') renderDomestic(container);
   else if (hash === 'pets') renderPets(container);
   else if (hash === 'social') renderSocial(container);
+  else if (hash === 'personal') renderPersonal(container);
   else renderPage(container, hash);
 }
 

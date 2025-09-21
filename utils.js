@@ -108,7 +108,7 @@ export function parseCSVToStore(text) {
     const parts = raw.split(',').map(s => s.trim().replace(/^"|"$/g, ''));
     const [catRaw, field, valRaw, freqRaw] = parts;
 
-    if (!catRaw.startsWith('bp_page_') && !['income','housing','utilities','transport','finance','domestic','pets','social'].includes(catRaw)) {
+    if (!catRaw.startsWith('bp_page_') && !['income','housing','utilities','transport','finance','domestic','pets','social','personal'].includes(catRaw)) {
       throw new Error(`Invalid category: ${catRaw}`);
     }
 

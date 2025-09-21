@@ -1,20 +1,23 @@
 import { field, loadPageData, populateForm, collect, savePageData } from './utils.js';
 
-export function renderHousing(container) {
-  const key = 'housing';
+export function renderPersonal(container) {
+  const key = 'personal';
   container.innerHTML = `
-    <form id="housingForm" class="form-section">
-      ${field('Mortgage / Rent', 'mortgage', key)}
-      ${field('Council Tax', 'council_tax', key)}
-      ${field('Insurance', 'insurance', key)}
-      ${field('Home decor', 'home_decor', key)}
-      ${field('Maintenance', 'maintenance', key)}
+    <form id="personalForm" class="form-section">
+      ${field('Clothes/Shoes', 'clothes', key)}
+      ${field('Hair & beauty', 'hair', key)}
+      ${field('Dentist', 'dentist', key)}
+      ${field('Optician', 'optician', key)}
+      ${field('Charity', 'charity', key)}
+      ${field('Cards & Gifts', 'cards', key)}
+      ${field('Gambling', 'gambling', key)}
+      ${field('Smoking', 'smoking', key)}
       ${field('Other', 'other', key)}
       <p class="note small">Please enter whole pounds only.</p>
     </form>
   `;
 
-  const form = document.getElementById('housingForm');
+  const form = document.getElementById('personalForm');
 
   // Load previously saved data and THEN attach auto-save
   const data = loadPageData(key);
